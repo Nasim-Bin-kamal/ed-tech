@@ -5,24 +5,25 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import AuthProvider from "./contexts/AuthProvider";
+import AllCourses from "./pages/AllCourses/AllCourses";
 
 
 
 function App() {
   return (
     <div className="">
-      <AuthProvider>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            {/* <Route path="/Shop" element={<Sh />} /> */}
-            {/* <Route path="/about" element={<About />} /> */}
-            {/* <Route path="/contact" element={<Contact />} /> */}
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="*" element={<NotFound />} />
-            {/* <Route path="/dashboard/*" element={<PrivateRoute>
+      {/* <AuthProvider> */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/courses" element={<AllCourses />} />
+          {/* <Route path="/about" element={<About />} /> */}
+          {/* <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="*" element={<NotFound />} />
+          {/* <Route path="/dashboard/*" element={<PrivateRoute>
               <Dashboard />
             </PrivateRoute>}>
               <Route path="" element={<DashboardHome />} />
@@ -36,9 +37,9 @@ function App() {
             <Route path="/checkout" element={<PrivateRoute>
               <Checkout />
             </PrivateRoute>} /> */}
-          </Routes>
-        </Router>
-      </AuthProvider>
+        </Routes>
+      </Router>
+      {/* </AuthProvider> */}
     </div>
   );
 }

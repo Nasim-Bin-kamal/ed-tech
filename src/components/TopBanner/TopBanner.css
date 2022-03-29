@@ -1,0 +1,10 @@
+.title {
+  font-size: 46px;
+}
+.banner {
+  background-color: #044370;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: border-box;
+}

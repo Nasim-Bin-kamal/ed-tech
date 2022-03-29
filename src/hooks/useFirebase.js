@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getAuth, GoogleAuthProvider, GithubAuthProvider, signInWithPopup, createUserWithEmailAndPassword, getIdToken, sendEmailVerification, updateProfile, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 import initializeFirebase from '../firebase/firebase.init';
+import { getAuth, GoogleAuthProvider, GithubAuthProvider, signInWithPopup, createUserWithEmailAndPassword, getIdToken, sendEmailVerification, updateProfile, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 
 
 initializeFirebase();
@@ -18,7 +18,7 @@ const useFirebase = () => {
 
     //Register user by email and password
 
-    const registerUser = (email, password, name, location, navigate) => {
+    const registerUser = (email, password, name, location, history) => {
 
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
@@ -45,7 +45,7 @@ const useFirebase = () => {
 
                 //for redirect user
                 const destination = location?.state?.from || '/';
-                navigate(destination);
+                history.replace(destination);
 
                 setUser(result.user);
             }).catch(error => {
@@ -66,7 +66,7 @@ const useFirebase = () => {
 
 
     //sign in with email and password
-    const userSignIn = (email, password, location, navigate) => {
+    const userSignIn = (email, password, location, history) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
@@ -74,7 +74,7 @@ const useFirebase = () => {
                 setUser(result?.user);
                 //redirect user
                 const destination = location?.state?.from || '/';
-                navigate(destination);
+                history.replace(destination);
 
                 setErrorMsg('');
             }).catch(error => {
@@ -86,14 +86,14 @@ const useFirebase = () => {
 
     //user sign out
 
-    const userSingOut = (location, navigate) => {
+    const userSingOut = (location, history) => {
         setIsLoading(true);
         signOut(auth).then(() => {
             //signout successfull
             setErrorMsg('');
             //redirect user
             const destination = location?.state?.from || '/';
-            navigate(destination);
+            history.replace(destination);
         }).catch((error) => {
             setErrorMsg(error.message);
             //error happened
@@ -120,20 +120,19 @@ const useFirebase = () => {
 
 
     //sign in with google
-    const signInWithGoogle = (location, navigate) => {
+    const signInWithGoogle = (location, history) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then(result => {
                 setErrorMsg('');
                 const user = result?.user;
-                console.log(result);
 
                 //save user date to database
                 saveUserData(user?.email, user?.displayName, 'PUT');
 
                 //redirect user
                 const destination = location?.state?.from || '/';
-                navigate(destination);
+                history.replace(destination);
 
             }).catch(error => {
                 setErrorMsg(error?.message);
@@ -143,7 +142,7 @@ const useFirebase = () => {
     }
 
     //sign in with github
-    const signInWithGithub = (location, navigate) => {
+    const signInWithGithub = (location, history) => {
         setIsLoading(true);
         signInWithPopup(auth, githubProvider)
             .then(result => {
@@ -154,7 +153,7 @@ const useFirebase = () => {
 
                 //redirect user
                 const destination = location?.state?.from || '/';
-                navigate(destination);
+                history.replace(destination);
 
             }).catch(error => {
                 setErrorMsg(error?.message);

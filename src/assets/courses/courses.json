@@ -1,0 +1,42 @@
+[
+    {
+        "courseId": "1001",
+        "courseName": "Python for Data Science & Machine Learning",
+        "price": 50,
+        "image": "https://remakelearning.org/wp-content/uploads/2020/01/105.jpg",
+        "description": "Python for Data Science and Machine Learning is a popular Python Course. The first part of the course is a Python crash course that covers data structures and Python syntax. Once that's out of the way then you'll learn popular libraries used in Data Science and Machine Learning such as NumPy, Pandas, Matplotlib, etc.",
+        "rating": 8.0
+    },
+    {
+        "courseId": "1003",
+        "courseName": "The complete web development bootcamp.",
+        "price": 50,
+        "image": "https://www.reachfirst.com/wp-content/uploads/2018/08/Web-Development.jpg",
+        "description": "Web development is the building and maintenance of websites; it's the work that happens behind the scenes to make a website look great, work fast and perform well with a seamless user experience.The field of web development is generally broken down into front-end (the user-facing side) and back-end (the server side).",
+        "rating": 6.0
+    },
+    {
+        "courseId": "1005",
+        "courseName": "Graphic Designing",
+        "price": 25,
+        "image": "https://i1.wp.com/www.graphic-design-institute.com/wp-content/uploads/2019/04/gdi-promising-graphic-designing-courses.jpg?fit=1200%2C800&ssl=1",
+        "description": "Graphic design is a craft where professionals create visual content to communicate messages. By applying visual hierarchy and page layout techniques, designers use typography and pictures to meet users' specific needs and focus on the logic of displaying elements in interactive designs, to optimize the user experience.",
+        "rating": 8.0
+    },
+    {
+        "courseId": "1006",
+        "courseName": "Online Marketing",
+        "price": 20,
+        "image": "https://assets.wordstream.com/s3fs-public/styles/simple_image/public/images/media/images/online-marketing-graphic_0.jpg?R_VbkA8vWTYsfkRDe8GRN6TEF_2alsOV&itok=bsAjbe2B",
+        "description": "Digital marketing is the component of marketing that utilizes internet and online based digital technologies such as desktop computers, mobile phones and other digital media and platforms to promote products and services. ",
+        "rating": 5.0
+    },
+    {
+        "courseId": "1010",
+        "courseName": "Mobile Application Development",
+        "price": 50,
+        "image": "https://i.pinimg.com/originals/64/a6/78/64a678a12f438ed667574ad3d37e4a2b.png",
+        "description": "Mobile app development is the act or process by which a mobile app is developed for mobile devices, such as personal digital assistants, enterprise digital assistants or mobile phones. These software applications are designed to run on mobile devices, such as a smartphone or tablet computer.",
+        "rating": 8.0
+    }
+]
