@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, Alert } from 'react-bootstrap';
-import { NavLink, useHistory, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+
 
 import './Login.css';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
     const location = useLocation();
-    const history = useHistory();
+    const navigate = useNavigate();
 
-    const { signInWithGoogle, signInWithGithub, userSignIn, errorMsg } = useAuth();
+    // const { signInWithGoogle, signInWithGithub, userSignIn, errorMsg } = useAuth();
 
     const handleOnBlur = (e) => {
         const field = e.target.name;
@@ -23,15 +24,15 @@ const Login = () => {
 
     const handleSubmitLogin = (e) => {
         e.preventDefault();
-        userSignIn(loginData?.email, loginData?.password, location, history);
+        // userSignIn(loginData?.email, loginData?.password, location, navigate);
     }
 
     const handleGoogleSignIn = () => {
-        signInWithGoogle(location, history);
+        // signInWithGoogle(location, navigate);
     }
 
     const handleGithubSignIn = () => {
-        signInWithGithub(location, history);
+        // signInWithGithub(location, navigate);
     }
 
 
@@ -42,7 +43,7 @@ const Login = () => {
                 <div className="user-form mx-auto my-5 p-3 rounded-3 shadow-sm">
 
                     {
-                        errorMsg && <Alert variant="danger" dismissible >{errorMsg}</Alert>
+                        // errorMsg && <Alert variant="danger" dismissible >{errorMsg}</Alert>
                     }
 
                     <Form className="mx-auto w-100" onSubmit={handleSubmitLogin}>

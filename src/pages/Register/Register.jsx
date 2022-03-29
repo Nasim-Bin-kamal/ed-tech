@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, Alert } from 'react-bootstrap';
-import { NavLink, useHistory, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Register.css';
 
 const Register = () => {
     const [registerData, setRegisterData] = useState({});
-    const { signInWithGoogle, signInWithGithub, registerUser, errorMsg } = useAuth();
+    // const { signInWithGoogle, signInWithGithub, registerUser, errorMsg } = useAuth();
 
-    const history = useHistory();
     const location = useLocation();
+    const navigate = useNavigate();
 
 
     const handleOnBlur = (e) => {
@@ -25,22 +25,22 @@ const Register = () => {
     }
 
     const handleSubmitRegistration = (e) => {
-        e.preventDefault();
-        if (registerData.password !== registerData.password2) {
-            alert('Password did not match');
-            return;
-        }
+        // e.preventDefault();
+        // if (registerData.password !== registerData.password2) {
+        //     alert('Password did not match');
+        //     return;
+        // }
 
-        registerUser(registerData?.email, registerData?.password, registerData?.name, location, history)
+        // registerUser(registerData?.email, registerData?.password, registerData?.name, location, navigate)
 
     }
 
     const handleGoogleSignIn = () => {
-        signInWithGoogle(location, history);
+        // signInWithGoogle(location, navigate);
     }
 
     const handleGithubSignIn = () => {
-        signInWithGithub(location, history);
+        // signInWithGithub(location, navigate);
     }
     return (
         <div>
@@ -48,7 +48,7 @@ const Register = () => {
                 <h2 className="text-center mx-auto my-5 form-title">Please Register First</h2>
                 <div className="user-form mx-auto my-5 p-3 rounded-3 shadow-sm">
                     {
-                        errorMsg && <Alert variant="danger" dismissible >{errorMsg}</Alert>
+                        // errorMsg && <Alert variant="danger" dismissible >{errorMsg}</Alert>
                     }
                     <Form className="mx-auto w-100" onSubmit={handleSubmitRegistration}>
 
