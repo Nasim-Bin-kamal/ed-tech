@@ -11,7 +11,7 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    // const { signInWithGoogle, signInWithGithub, userSignIn, errorMsg } = useAuth();
+    const { signInWithGoogle, signInWithGithub, userSignIn, errorMsg } = useAuth();
 
     const handleOnBlur = (e) => {
         const field = e.target.name;
@@ -24,15 +24,15 @@ const Login = () => {
 
     const handleSubmitLogin = (e) => {
         e.preventDefault();
-        // userSignIn(loginData?.email, loginData?.password, location, navigate);
+        userSignIn(loginData?.email, loginData?.password, location, navigate);
     }
 
     const handleGoogleSignIn = () => {
-        // signInWithGoogle(location, navigate);
+        signInWithGoogle(location, navigate);
     }
 
     const handleGithubSignIn = () => {
-        // signInWithGithub(location, navigate);
+        signInWithGithub(location, navigate);
     }
 
 
@@ -43,7 +43,7 @@ const Login = () => {
                 <div className="user-form mx-auto my-5 p-3 rounded-3 shadow-sm">
 
                     {
-                        // errorMsg && <Alert variant="danger" dismissible >{errorMsg}</Alert>
+                        errorMsg && <Alert variant="danger" dismissible >{errorMsg}</Alert>
                     }
 
                     <Form className="mx-auto w-100" onSubmit={handleSubmitLogin}>

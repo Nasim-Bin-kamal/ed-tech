@@ -6,6 +6,7 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import AuthProvider from "./contexts/AuthProvider";
 import AllCourses from "./pages/AllCourses/AllCourses";
+import Order from "./pages/Order/Order";
 
 
 
@@ -22,6 +23,7 @@ function App() {
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/courses/order/:id" element={<Order />} />
           <Route path="*" element={<NotFound />} />
           {/* <Route path="/dashboard/*" element={<PrivateRoute>
               <Dashboard />

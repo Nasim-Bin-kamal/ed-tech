@@ -1,30 +1,13 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { Container, Row, Spinner } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 import SingleCourse from '../SingleCourse/SingleCourse';
 import './Courses.css';
-import courses from '../../assets/courses/courses.json';
+import useCourses from '../../hooks/useCourses';
 
-const BestPackages = () => {
-    // const [courses, setCourses] = useState([]);
-    // const { loading } = useAuth();
+const Courses = () => {
+    const [courses] = useCourses([]);
 
-    // useEffect(() => {
-    //     fetch('/src/assets/courses/courses.json')
-    //         .then(res => res.json())
-    //         .then(data => setCourses(data));
-    // }, []);
-    // if (loading) {
-    //     return (
-    //         <div className="d-flex justify-content-center my-5 loading">
-    //             <Spinner className="" animation="grow" variant="danger" />
-    //             <Spinner className="" animation="grow" variant="warning" />
-    //             <Spinner className="" animation="grow" variant="success" />
-    //         </div>
-    //     )
-    // }
 
     return (
         <div className="packages-section py-5">
@@ -45,4 +28,4 @@ const BestPackages = () => {
     );
 };
 
-export default BestPackages;
+export default Courses;

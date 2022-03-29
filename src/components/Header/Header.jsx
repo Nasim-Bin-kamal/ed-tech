@@ -8,7 +8,7 @@ import { FaSignOutAlt } from "react-icons/fa";
 
 
 const Header = () => {
-    //const { user, userSingOut } = useAuth();
+    // const { user, userSingOut } = useAuth();
     const location = useLocation();
     const history = useNavigate();
 

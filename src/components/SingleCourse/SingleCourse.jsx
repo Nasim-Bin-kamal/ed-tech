@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router';
 import './SingleCourse.css';
 
 const SingleCourse = ({ course }) => {
-    const history = useNavigate();
+    const navigate = useNavigate();
     const { courseId, courseName, price, image, description, rating } = course || {};
 
     const handleBookingPackage = (id) => {
-        history.push(`/packages/booking/${id}`);
+        navigate(`/courses/order/${id}`);
     }
     return (
         <div>
