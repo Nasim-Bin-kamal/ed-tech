@@ -1,9 +1,11 @@
 import React from 'react';
 import { Col, Container, Row, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './TopBanner.css';
 
 
 const TopBanner = () => {
+    const navigate = useNavigate();
     return (
         <div className="banner py-5">
             <Container>
@@ -12,7 +14,7 @@ const TopBanner = () => {
                         <div className="text-white mx-auto">
                             <h1 className="title">Learning From Ed-Tech with Top Courses</h1>
                             <p>Take Great Online Courses AnyWhere In The World.We are serving important courses for you.Learn interesting courses with our experts.</p>
-                            <Button className="rounded-pill px-3 my-3" variant="success">Get Started <i className="fas fa-arrow-right"></i></Button>
+                            <Button onClick={() => navigate("/courses")} className="rounded-pill px-3 my-3" variant="danger">Get Started <i className="fas fa-arrow-right"></i></Button>
                         </div>
                     </Col>
                     <Col sm={6} md={7}>

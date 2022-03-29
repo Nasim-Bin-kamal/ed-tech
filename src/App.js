@@ -7,25 +7,31 @@ import Register from "./pages/Register/Register";
 import AuthProvider from "./contexts/AuthProvider";
 import AllCourses from "./pages/AllCourses/AllCourses";
 import Order from "./pages/Order/Order";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 
 
 function App() {
   return (
     <div className="">
-      {/* <AuthProvider> */}
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/courses" element={<AllCourses />} />
-          {/* <Route path="/about" element={<About />} /> */}
-          {/* <Route path="/contact" element={<Contact />} /> */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/courses/order/:id" element={<Order />} />
-          <Route path="*" element={<NotFound />} />
-          {/* <Route path="/dashboard/*" element={<PrivateRoute>
+      <AuthProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/courses" element={<PrivateRoute>
+              <AllCourses />
+            </PrivateRoute>} />
+            {/* <Route path="/about" element={<About />} /> */}
+            {/* <Route path="/contact" element={<Contact />} /> */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/courses/order/:id" element={<PrivateRoute>
+              <Order />
+            </PrivateRoute>} />
+
+            <Route path="*" element={<NotFound />} />
+            {/* <Route path="/dashboard/*" element={<PrivateRoute>
               <Dashboard />
             </PrivateRoute>}>
               <Route path="" element={<DashboardHome />} />
@@ -39,9 +45,9 @@ function App() {
             <Route path="/checkout" element={<PrivateRoute>
               <Checkout />
             </PrivateRoute>} /> */}
-        </Routes>
-      </Router>
-      {/* </AuthProvider> */}
+          </Routes>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }

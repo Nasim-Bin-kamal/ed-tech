@@ -1,0 +1,20 @@
+.comment-form,
+.input-bg {
+  background-color: rgba(236, 228, 228, 0.562);
+}
+
+.btn-message:hover {
+  background-color: #07a173;
+}
+
+.short-info {
+  color: #08c092;
+}
+.contact-info {
+  background-color: #327066;
+  transition: 0.3s;
+}
+.contact-info:hover {
+  opacity: 0.8;
+  background-color: #079173;
+}
